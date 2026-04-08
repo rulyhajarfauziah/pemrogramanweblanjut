@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title> Belajar Tabel HTML </title>
+
+        <link rel="stylesheet" href="jquery.dataTables.min.css"></link>
+        <script src="jquery-3.7.0.min.js"></script> 
+        <script src="jquery.dataTables.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Form Tambah Data -->
+        <h3> Tambah Data </h3>
+        <input type="text" id="nama" placeholder="Nama">
+        <input type="text" id="tinggi" placeholder="Tinggi">
+        <input type="text" id="status" placeholder="Status">
+        <input type="text" id="pekerjaan" placeholder="Pekerjaan">
+        <button id="tambah"> Tambah </button>
+
+        <br><br>
+
+        <table border="1" cellpadding="10" id="table1">
+        <thead>
+        <tr>
+            <th> Nama </th> 
+            <th> Tinggi </th>
+            <th> Status </th>
+            <th> Pekerjaan </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> Levi Ackerman</td>
+            <td> 160cm </td>
+            <td> Suami Sah </td>
+            <td> Captain </td>
+            <td>
+                <button class="edit"> Edit </button>
+                <button class="hapus"> Hapus </button>
+            </td>
+        </tr>
+        <tr>
+            <td> Lawliet </td>
+            <td> 180cm </td>
+            <td> Mantan </td>
+            <td> Detektif </td>
+            <td>
+                <button class="edit"> Edit </button>
+                <button class="hapus"> Hapus </button>
+            </td>
+        </tr>
+        <tr>
+            <td> Shinei Nouzen </td>
+            <td> 170cm </td>
+            <td> Mantan HTS </td>
+            <td> Tentara </td>
+            <td>
+                <button class="edit"> Edit </button>
+                <button class="hapus"> Hapus </button>
+            </td>
+        </tr>
+        </tbody>
+       
+        </table>
+
+        <script>
+            $(document).ready(function () {
+                var table = $('#table1').DataTable();
+
+                $('#tambah').click(function(){
+                    var nama = $('#nama').val();
+                    var tinggi = $('#tinggi').val();
+                    var status = $('#status').val();
+                    var pekerjaan = $('#pekerjaan').val();
+
+                    table.row.add([
+                        nama,
+                        tinggi,
+                        status,
+                        pekerjaan,
+                        '<button class="edit"> Edit </button> <button class="hapus">Hapus</button>'
+                    ]).draw();
+
+                    // reset input
+                    $('#nama').val('');
+                    $('#tinggi').val('');
+                    $('#status').val('');
+                    $('#pekerjaan').val('');
+                });
+
+              
+                $('#table1 tbody').on('click', '.hapus', function () {
+                    table.row($(this).parents('tr')).remove().draw();
+                });
+
+            
+                $('#table1 tbody').on('click', '.edit', function () {
+                    var row = $(this).parents('tr');
+                    var data = table.row(row).data();
+
+                    var nama = prompt("Edit Nama:", data[0]);
+                    var tinggi = prompt("Edit Tinggi:", data[1]);
+                    var status = prompt("Edit Status:", data[2]);
+                    var pekerjaan = prompt("Edit Pekerjaan:", data[3]);
+
+                    if(nama !== null){
+                        table.row(row).data([
+                            nama,
+                            tinggi,
+                            status,
+                            pekerjaan,
+                            '<button class="edit"> Edit </button> <button class="hapus"> Hapus </button>'
+                        ]).draw();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
