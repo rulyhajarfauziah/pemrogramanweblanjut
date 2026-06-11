@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f1f5f9;
+    padding:20px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:420px;
+    margin:auto;
+}
+
+/* HEADER */
+.header{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LABEL */
+.label{
+    margin-bottom:6px;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+/* INPUT */
+input, select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+/* MENU */
+.menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+/* ALERT */
+.alert-success{
+    background:#dcfce7;
+    color:#166534;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.alert-error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2563eb;
+    color:white;
+    padding:10px;
+}
+
+table td{
+    background:white;
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+/* STATUS */
+.status-menunggu{
+    background:orange;
+    color:white;
+    padding:5px 10px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+.status-dipanggil{
+    background:blue;
+    color:white;
+    padding:5px 10px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+.status-selesai{
+    background:green;
+    color:white;
+    padding:5px 10px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:white;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* TITLE */
+.title{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* MOBILE */
+@media(max-width:500px){
+    .container{
+        width:100%;
+    }
+}
